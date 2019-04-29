@@ -4,7 +4,7 @@
 using namespace std;
 
 int main() {
-    int choice;
+    int choice = 9;
     do {
         cout<<"==============================================="<<endl;
         cout<<endl;

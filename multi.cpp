@@ -560,3 +560,45 @@ void cleanRelation (listRole &LR, int ID) {
         R = R->nextRole;
     }
 }
+
+/** CASE FUNCTIONALITY */
+int countRole (listRole LR) {}
+
+int countHero (listHero LH) {}
+
+int countHeroOfRole (listRole LR, int ID) {
+    int X = 0;
+    adrR R = searchIDrole(LR,ID);
+    if (R != NULL) {
+        adrE E = R->Relate.firstRelate;
+        while (E != NULL) {
+            X++;
+            E = E->nextRelate;
+        }
+    } else {
+        cout<<"Role not found"<<endl;
+    }
+    return X;
+}
+
+void mostHeroRole (listRole LR) {
+    int maks = -9999;
+    adrR R = LR.firstRole;
+    while (R != NULL) {
+        int X = countHeroOfRole(LR,R->IDr);
+        if (X > maks) {
+            maks = X;
+        }
+        R = R->nextRole;
+    }
+    R = LR.firstRole;
+    while (R != NULL && countHeroOfRole(LR,R->IDr) != maks) {
+        R = R->nextRole;
+    }
+    if (R != NULL) {
+        displayRole(R);
+        cout<<"Jumlah Hero: "<<maks<<endl;
+    }
+}
+
+int averageHero (listRole LR) {}
