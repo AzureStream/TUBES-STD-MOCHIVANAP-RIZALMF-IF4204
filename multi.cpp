@@ -567,21 +567,29 @@ int countRole (listRole LR) {
     int total = 0;
     while (P != NULL){
         total++;
-        Q = R->nextRole;
+        P = P->nextRole;
     }
     return total;
 }
 
 int countHero (listHero LH) {
-
-    adrR P = searchIDrole(LR, IDr);
+    adrH Q = LH.firstHero;
     int jumlah = 0;
-    if (P != NULL){
-        adrH Q = LH.firstHero;
-        while (Q != NULL){
+    while (Q != NULL){
+        jumlah++;
+        Q = Q->nextHero;
+    }
+    return jumlah;
+}
+
+int countRelation (listRelation LE) {
+    adrE E = LE.firstRelate;
+    int jumlah = 0;
+    while (E != NULL) {
+        if (E->toHero != NULL) {
             jumlah++;
-            Q = H->nextHero;
         }
+        E = E ->nextRelate;
     }
     return jumlah;
 }
@@ -612,25 +620,23 @@ void mostHeroRole (listRole LR) {
         R = R->nextRole;
     }
     R = LR.firstRole;
-    while (R != NULL && countHeroOfRole(LR,R->IDr) != maks) {
+    while (R != NULL) {
+        if (countHeroOfRole(LR,R->IDr) == maks) {
+            displayRole(R);
+            cout<<"Jumlah Hero: "<<maks<<endl;
+        }
         R = R->nextRole;
-    }
-    if (R != NULL) {
-        displayRole(R);
-        cout<<"Jumlah Hero: "<<maks<<endl;
     }
 }
 
 int averageHero (listRole LR) {
-    adrR P = LE.firstRelate;
-    int avg = 0;
+    adrR P = LR.firstRole;
     int tambah = 0;
     int total = countRole(LR);
-    adrH Q = E->toHero;
-    if (E->toHero != NULL){
-        tambah++;
-        Q = H->nextHero;
+    while (P != NULL) {
+        tambah = tambah + countRelation(P->Relate);
+        P = P->nextRole;
     }
-    avg = tambah / total;
+    int avg = tambah / total;
     return avg;
 }

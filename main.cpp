@@ -8,6 +8,7 @@ listHero LH;
 Hero IDh, H;
 Role IDr, R;
 string role, hero;
+int total;
 int main() {
     createListRelation(LE);
     createListRole(LR);
@@ -45,7 +46,7 @@ int main() {
                 displayAll(LR);
                 break;
             case 6 :
-                int total = countRole(LR);
+                total = countRole(LR);
                 cout<< "Jumlah Role : "<< total<< endl;
                 break;
             case 7 :

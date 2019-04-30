@@ -134,6 +134,7 @@ void cleanRelation (listRole &LR, int ID);
 /** CASE FUNCTIONALITY */
 int countRole (listRole LR);
 int countHero (listHero LH);
+int countRelation (listRelation LE);
 int countHeroOfRole (listRole LR, int ID);
 void mostHeroRole (listRole LR);
 int averageHero (listRole LR);

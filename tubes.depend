@@ -1,12 +1,12 @@
 # depslib dependency file v1.0
-1556543235 source:c:\users\user\documents\github\tubes\main.cpp
+1556638362 source:c:\users\user\documents\github\tubes\main.cpp
 	"multi.h"
 	<iostream>
 
-1556543212 source:c:\users\user\documents\github\tubes\multi.cpp
+1556640039 source:c:\users\user\documents\github\tubes\multi.cpp
 	"multi.h"
 
-1556543712 c:\users\user\documents\github\tubes\multi.h
+1556640039 c:\users\user\documents\github\tubes\multi.h
 	<iostream>
 	<conio.h>
 
