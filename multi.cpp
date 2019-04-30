@@ -563,6 +563,17 @@ void cleanRelation (listRole &LR, int ID) {
 
 /** CASE FUNCTIONALITY */
 int countRole (listRole LR) {
+    adrR P = LR.firstRole;
+    int total = 0;
+    while (P != NULL){
+        total++;
+        Q = R->nextRole;
+    }
+    return total;
+}
+
+int countHero (listHero LH) {
+
     adrR P = searchIDrole(LR, IDr);
     int jumlah = 0;
     if (P != NULL){
@@ -573,16 +584,6 @@ int countRole (listRole LR) {
         }
     }
     return jumlah;
-}
-
-int countHero (listHero LH) {
-    adrR P = LR.firstRole;
-    int total = 0;
-    while (P != NULL){
-        total++;
-        Q = R->nextRole;
-    }
-    return total;
 }
 
 int countHeroOfRole (listRole LR, int ID) {
@@ -621,12 +622,15 @@ void mostHeroRole (listRole LR) {
 }
 
 int averageHero (listRole LR) {
-    adrR P = searchIDrole(LR, IDr);
+    adrR P = LE.firstRelate;
     int avg = 0;
-    if (P != NULL){
-        int jumlah = countHero(LH);
-    }
+    int tambah = 0;
     int total = countRole(LR);
-    avg = jumlah / total;
+    adrH Q = E->toHero;
+    if (E->toHero != NULL){
+        tambah++;
+        Q = H->nextHero;
+    }
+    avg = tambah / total;
     return avg;
 }
